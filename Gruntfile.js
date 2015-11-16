@@ -15,7 +15,7 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     dirs: {
-      output: 'build'
+      output: 'dist'
     },
 
     connect: {
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
         tasks: ['sass:dev']
       },
       reload: {
-        files: ['app/**/*.css', 'app/**/*.html'],
+        files: ['app/css/**/*.css', 'app/js/*.js', 'app/**/*.html'],
         options: {
           livereload: true
         }
@@ -55,7 +55,7 @@ module.exports = function (grunt) {
           outputStyle: "compressed"
         },
         files: {
-          'app/css/main.css': 'app/scss/main.scss'
+          'app/<%= dirs.output %>/css/main.css': 'app/scss/main.scss'
         }
       }
     },
@@ -68,7 +68,7 @@ module.exports = function (grunt) {
           collapseWhitespace: true
         },
         files: {                                   // Dictionary of files
-          'app/index.min.html': 'app/index.html'     // 'destination': 'source'
+          'app/<%= dirs.output %>/index.html': 'app/index.html'     // 'destination': 'source'
         }
       }
     },

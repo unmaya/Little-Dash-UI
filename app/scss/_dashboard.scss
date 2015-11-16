@@ -60,6 +60,7 @@
       right: 10px;
       font-size: 15px;
       line-height: 54px;
+      color: #999;
     }
     &.notifications {
       left: 15px;
@@ -73,10 +74,12 @@
         padding: 2px 6px 3px;
         border-radius: 14px;
         color: white;
-        margin-left: -2px;
+        margin-left: -4px;
         font-weight: bold;
-        font-size: .9em;
+        font-size: .85em;
         font-family: 'lato';
+        position: relative;
+        top: -6px;
       }
     }
   }
@@ -209,11 +212,21 @@ footer {
     float: right;
     font-size: 1.4em;
     text-align: center;
-    width: 48px;
+    width: 54px;
     line-height: 48px;
     color: #999;
     cursor: pointer;
 
     &:hover {color: inherit;}
+  }
+}
+
+.drawer {
+  display: none;
+
+  &.is-active {display: block;}
+
+  .spendings {
+    padding: 20px;
   }
 }

@@ -1,13 +1,13 @@
 {
   "name": "LittleDash",
   "version": "0.1.1",
-  "description": "A tiny app UI example",
+  "description": "A little UI / UX experiment.",
   "author": {
     "name": "Fred Maya"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/unmaya/"
+    "url": "git://github.com/unmaya/littledash"
   },
   "dependencies": {
     "express": "4.6.1"
