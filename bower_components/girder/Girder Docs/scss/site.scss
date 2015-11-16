@@ -1,0 +1,301 @@
+@charset "UTF-8";
+////////////////////////////////
+// Styles for an example site using Girder.
+// You can use this as a reference guide to get started.
+// Import Girder with its main partial
+
+// Optional: overwrite Girder gutters in ems before importing (Default 1.25em = 20px)
+$gutters: 1.25em;
+// Girder grid modules (adjust your path to _girder.scss)
+@import "../../scss/girder";
+
+// Site Styling Variables
+$body-bg             : #ffffff;
+$base-font-color     : #333333;
+$linkColor	         : #72CEE7;
+$linkHoverColor      : #daf7fe;
+$lightText			     : #a6a6a6;
+$highlightColor      : #fffac0;
+
+// Matching Girder's em-base for consistency
+$base-font-size: $em-base !default;
+
+// The font sizes for h1-h6.
+$h1-font-size: 2.8   * $base-font-size;
+$h2-font-size: 1.8   * $base-font-size;
+$h3-font-size: 1.17  * $base-font-size;
+$h4-font-size: 1     * $base-font-size;
+
+// The amount lists and blockquotes are indented.
+$indent-amount: 30px;
+
+// Default font families
+$headings-font        : source-sans-pro, "Helvetica Neue", "Helvetica", sans-serif;
+$base-font-family     : source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
+$girder-font-family   : lato, source-sans-pro, "Helvetica", sans-serif;
+
+/* /////////////////////////////////////// */
+/*  Girder Site & Example Styles  /////// */
+/* ///////////////////////////////////// */
+body {
+	background: $body-bg;
+	color: $base-font-color;
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	line-height: 1.5em;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+}
+html, body, .container, .about, .content, .actions {height: 100%;}
+h1, h2, h3, h4 {margin-bottom: .4em;}
+h3 {margin-top: .4em;}
+h1 {
+	font-size: $h1-font-size;
+	line-height: 1.60714em;
+	margin-top: 0.53571em;
+}
+h2 {
+	font-size: $h2-font-size;
+	line-height: 1.66667em;
+	margin-top: 0.83333em;
+}
+p {margin: 1em 0 1.5em;}
+a {
+	&:link, &:visited {color: $linkColor;}
+	&:hover, &:active {color: $linkHoverColor;}
+}
+img {border: 0;}
+
+// Expressed CSS classes for reference
+.about {
+	@extend %row;
+	// @include baseline-grid;
+	// Specific to about section
+	.content {
+		// Account for actions sidebar
+		margin-right: 25%;
+		padding-left: $gutters + $gutters /2;
+		padding-right: $gutters + $gutters /2;
+
+		> * {
+			// constrain content to small-breakpoint width, fallback to pixels
+			max-width: strip-unit($small-breakpoint) / 100 * $base-font-size * 100;
+			// replace em for rem
+			max-width: strip-unit($small-breakpoint) + rem;
+			margin-left: auto; margin-right: auto;
+			}
+
+		@if $use-breakpoint == true {
+			@include breakpoint($single-column) {
+				height: auto;
+			}
+		}
+		@else {
+			@include media-query(10em, $small-breakpoint) {
+				height: auto;
+			}
+		}
+	}
+}
+
+.content {
+	@include unit(three-fourths);
+
+	[role="banner"] {
+		h1 {
+			font-family: $girder-font-family;
+			font-weight: 300;
+			font-size: 4em;
+			margin-top: 1em;
+			margin-bottom: 0;
+			letter-spacing: -.05em;
+			text-transform: uppercase;
+		}
+	}
+	a:link, a:visited {color: #2099ba; padding: 0 3px;}
+	a:hover, a:active {color: $base-font-color; background: $linkHoverColor;}
+	ul {margin: 0;}
+}
+
+.actions {
+	@include unit(fourth);
+	background: #242526;
+	color: $lightText;
+	position: fixed;
+	text-align: center;
+	right: 0;
+	top: 0;
+
+	@if $use-breakpoint == true {
+		@include breakpoint($single-column) {
+			height: auto;
+			position: relative;
+		}
+	}
+	@else {
+		@include media-query(10em, $small-breakpoint) {
+			height: auto;
+			position: relative;
+		}
+	}
+	.gee {
+		margin: 5.95em auto .5em;
+
+		img {
+			width: 75%;
+			max-width: 200px;
+		}
+	}
+
+	ul {list-style: none; margin: 0; padding: 1.25em 0 1em;}
+
+	a:link, a:visited {
+		text-decoration: none;
+		display: block;
+
+		&.download {
+			@include prefix(box-shadow, #333 0 1px 0);
+			@include prefix(border-radius, 4px);
+			color: $body-bg;
+			text-shadow: 0 -1px 0 $linkColor;
+			width: emCalc(120px);
+			margin: 0 auto .8em auto;
+			padding: emCalc(5px) emCalc(10px);
+			background: #23abd0;
+
+			line-height: 1.6em;
+			text-transform: uppercase;
+			font-weight: bold;
+			&:hover {background: #1c87a4;}
+		}
+
+		&:hover {color: $linkHoverColor;}
+	}
+}
+// End .actions
+
+footer {
+	padding: 2em 0;
+	.credits {@include text-align(center);}
+	a {text-transform: uppercase;}
+}
+
+// Test grid elements
+.example-gs {@include unit(golden-small);}
+.example-gl {@include unit(golden-large);}
+.example-half {@include unit(half);}
+.example-fourth {@include unit(fourth);}
+.example-34 {@include unit(three-fourths);}
+.equal-units {background: $highlightColor;}
+
+// Visualizing Girder units
+.content .row pre {
+	@include panel();
+	// transition: all 0.3s ease-in;
+	@include prefix(transition, all 0.3s ease-in);
+	overflow: hidden;
+	text-shadow: 0 1px 0 $linkHoverColor;
+	&:hover {background: $linkColor; border-color: #1c87a4;}
+}
+
+.setup {
+	@extend %row;
+	section {
+		padding-top: 0 !important; padding-bottom: 0 !important;
+	}
+}
+
+nav#top {
+	border: 1px solid #eee;
+	display: none;
+	margin: 0 auto;
+	position: relative;
+	text-transform: uppercase;
+	text-align: center;
+	z-index: 1000;
+
+	a {
+		display: block;
+		text-decoration: none;
+		padding: 8px;
+		font-weight: bold;
+	}
+
+	a.trigger:link,
+	a.trigger:visited,
+	a.trigger:hover ,
+	a:hover {color: #333;}
+
+	ul {
+		border: 1px solid #eee;
+		display: none;
+		margin: 0;
+		background: #fff;
+		position: absolute;
+		padding: 0 0 8px;
+		top: 0;
+		width: 100%;
+
+		.trigger {
+			border-bottom: 1px solid #eee;
+			padding: 8px;
+			background: #f5f5f5;
+		}
+		a {padding: 5px 0 0;}
+	}
+
+	#navigate:target {display: block;}
+
+	@if $use-breakpoint == true {
+		@include breakpoint($single-column) {
+			display: block;
+		}
+	}
+	@else {
+		@include media-query(10em, $small-breakpoint) {
+			display: block;
+		}
+	}
+}
+
+// Example breakpoint for larger screens
+@if $use-breakpoint == true {
+	@include breakpoint($large-breakpoint) {
+		.content .row pre {
+			font-size: 13px;
+			font-size: .75rem;
+			line-height: .8rem;
+		}
+		p {
+			font-size: 1.125em;
+		}
+	}
+}
+@else {
+	@media (min-width: $large-breakpoint) {
+		.content .row pre {
+			font-size: 13px;
+			font-size: .75rem;
+			line-height: .8rem;
+		}
+		p {
+			font-size: 1.125em;
+			line-height: 1.46667em;
+		}
+	}
+}
+
+// * Remove text-shadow in selection highlight: h5bp.com/i
+::-moz-selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+::selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+// IE < 8 Fails
+html.lt-ie8 {
+	.container .content {display: none !important;}
+}

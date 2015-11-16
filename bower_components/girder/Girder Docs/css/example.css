@@ -1,0 +1,301 @@
+@charset "UTF-8";
+/* ////////////////////////////////////////////////// */
+/*  Example page using Standard Girder.css    ////// */
+/*  Not required by Girder, just for demo    ////// */
+/* /////////////////////////////////////////////// */
+html {
+	font-size: 16px;
+}
+body {
+	background: #fff;
+	color: #333;
+	font-family: source-sans-pro, "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {margin-bottom: .4em;}
+h1 {
+	line-height: 1.60714em;
+}
+h2 {
+	font-size: 26px;
+	font-size: 1.625rem;
+	margin-top: 0;
+}
+h3 {margin-top: .4em;}
+
+p {
+	margin: .75em 0 1.5em;
+	/*line-height: 1.5;*/
+		font-size: 18px;
+		font-size: 1.225rem;
+		line-height: 1.5;
+	}
+a:link, a:visited {color: #2099ba;}
+a:hover, a:active {color: #64C2DD;}
+.top-wrapper, .main-wrapper {
+	max-width: 568px;
+	max-width: 37.5rem;
+	padding-left: 0; padding-right: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+.top-content {
+	background: #EAEAEA;
+	padding-bottom: 1em;
+	margin-bottom: 1.75em;
+	text-shadow: 0 1px 0 #fff;
+}
+.guide .top-content {
+	background: #1B97B8;
+	text-shadow: none;
+}
+.guide nav a,
+.guide nav a:visited {color: #fff;}
+.guide nav a.activated {color: #333;}
+.guide nav a:hover {color: rgb(143, 213, 235);}
+.guide nav a.activated:hover {color: inherit;}
+nav {
+	float: right;
+	margin: 20px 10px 0;
+	line-height: 2rem;
+}
+nav a {
+	display: inline-block;
+	font-size: 19px;
+	font-size: 1.2rem;
+	/*font-weight: bold;*/
+	margin-right: 6px;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 3px 6px 0;
+	border-radius: 3px;
+}
+nav a.activated {
+	background: #72CEE7;
+	color: #333;
+	-webkit-box-shadow: 0 1px 0 #888;
+	-moz-box-shadow: 0 1px 0 #888;
+	box-shadow: 0 1px 0 #888;
+	text-shadow: none;
+}
+.guide [role="brand"]{
+	color: #222;
+	text-shadow: none;
+}
+nav a:hover {color: rgb(6, 96, 124); text-shadow: none;}
+.guide .top-wrapper {color: #fff;}
+.guide .top-wrapper a:link,
+.guide .top-wrapper a:visited {
+	color: #222;
+	background: #FFFAC0;
+	text-decoration: none;
+	padding: 0 3px;
+	text-shadow: none;
+}
+.examples .top-wrapper {text-align: center;}
+.top-content h2 a {color: #333; text-decoration: none;}
+[role="brand"] {
+		float: left;
+		font-family: lato, source-sans-pro, "Helvetica", sans-serif;
+		font-weight: 300;
+		font-size: 36px;
+		font-size: 2.25rem;
+		margin: 20px 0 0 10px;
+		line-height: 48px;
+		letter-spacing: -.05em;
+		text-transform: uppercase;
+	}
+[role="brand"] img {width: 42px; float: left; margin-right: 10px; border: 0;}
+[role="banner"] {margin: 40px auto 20px;}
+@media (min-width: 35.5em) {
+	[role="banner"] {margin: 120px auto 20px;}
+}
+[role="banner"] h1, [role="banner"] h2 {
+		font-family: lato, source-sans-pro, "Helvetica", sans-serif;
+		font-weight: 600;
+		font-size: 4.25em;
+		clear: both;
+		margin-bottom: 0;
+		letter-spacing: -.02em;
+		text-transform: uppercase;
+		line-height: 1;
+	}
+ [role="banner"] h2 {
+		font-weight: 300;
+		text-transform: none;
+		line-height: 1;
+		margin-bottom: .3em;
+		margin-top: .5em;
+	}
+	[role="banner"] span {
+		display: block;
+		font-size: 2em;
+		font-weight: 300;
+		line-height: 1.1;
+		margin: 0 0 1em;
+		text-transform: uppercase;
+	}
+.sample-grid {
+	margin: 0 auto 2em;
+	padding: 0 1.25em;
+	text-align: center;
+}
+.sample-grid div {
+-webkit-transition:all .3s;
+   -moz-transition:all .3s;
+        transition:all .3s;
+}
+.sample-grid img {width: 200px;}
+.sample-grid a {text-decoration: none;}
+.sample-grid small {display: block;}
+
+.features,
+.content {
+	margin: 0 auto;
+	padding: 0 2em;
+}
+.caption p {
+	font-family: lato, source-sans-pro, "Helvetica", sans-serif;
+	font-weight: 400;
+	font-size: 2.8em;
+	letter-spacing: -.02em;
+	line-height: 1.2;
+	margin: 0 .5em 1em;
+	text-align: center;
+}
+
+.reference {
+	margin-top: 1.25em;
+}
+dl.ref-table {
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 2.5em;
+	overflow: auto;
+	padding-left: 0;
+}
+.ref-table, .ref-table p {font-size: 15px;}
+.ref-table p {padding: 0.625em; margin: 0; overflow: auto; border-top: 1px solid #ddd;}
+.ref-table dt {
+	background: #eee;
+	clear: both;
+	font-weight: bold;
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-top: 1px solid #ddd;
+}
+.ref-table dd {
+	margin: 0;
+	width: 50%;
+	float: left;
+	border-left: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+}
+.ref-table dt, .ref-table dd {
+	float: left;
+	padding: 0.625em;
+	height: 64px;
+}
+@media (min-width: 35.5em) {
+	.ref-table dt, .ref-table dd {
+		width: 33.333%;
+	}
+}
+.ref-table .incss {color: #155379;}
+.ref-table .insass {color: #8D2800;}
+.ref-table em {color: #777;}
+
+.ref-table .title {overflow: auto; background: #1B97B8; color: #fff; margin: 0; padding: 0;}
+.ref-table .title dt,
+.ref-table .title dd {
+	background: transparent;
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+	height: auto;
+}
+
+footer {
+	border-top: 1px solid #ddd;
+	color: #888;
+	line-height: 1.4;
+	padding: .50em 0;
+	position: relative;
+}
+footer a {text-transform: uppercase;}
+footer .links {font-size: 1rem;}
+.guide footer .credits {text-align: left;}
+
+/* Example breakpoint for larger screens (790px) */
+@media (min-width: 49.375em) {
+	[role="banner"] h1 {
+		font-size: 5.2em;
+	}
+	h2 {
+		font-size: 32px;
+		font-size: 2rem;
+	}
+	.features div {text-align: center;}
+	footer .links {
+		position: absolute;
+		right: 0;
+		top: 1em;
+	}
+}
+
+/* Example max-width query */
+@media (max-width: 49.375em) {
+	/* Adjust the media grid layout */
+	.sample-grid .unit:nth-child(3) {clear: left;}
+	.sample-grid .fourth {width: 50%;}
+
+}
+
+/* Example breakpoint for x-large screen */
+@media (min-width: 58.75em) {
+	.sample-grid, .features {
+		/* 940px with 16px base */
+		max-width: 58.75em;
+	}
+	/* Increase unit padding (gutters) just for a specific row */
+	.features .unit {
+		padding-left: 1.25em;
+		padding-right: 1.25em;
+	}
+}
+
+/* Example breakpoint for smaller screens  */
+@media (max-width: 35.5em) and (min-width: 10em) {
+	[role="brand"],
+	nav {float: none; margin: 20px 0 0;}
+	[role="banner"] h1 {margin-top: 0;}
+	.examples .content {padding-top: 1em; border-top: 5px solid #eee;}
+}
+
+@media (max-width: 28em) {
+	/* Reset our adjusted layout */
+	.sample-grid .unit:nth-child(3) {clear: none;}
+	.sample-grid .fourth, .sample-grid img {width: 100%;}
+	[role="brand"] {display: none;}
+	.guide footer .credits {text-align: center;}
+}
+
+/* Remove text-shadow in selection highlight: h5bp.com/i */
+::-moz-selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+::selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+/* IE < 8 Fails */
+html.lt-ie8 .container .content {display: none !important;}
