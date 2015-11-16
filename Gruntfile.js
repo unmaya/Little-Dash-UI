@@ -3,8 +3,6 @@
  */
 'use strict';
 
-var path = require('path');
-
 module.exports = function (grunt) {
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
@@ -15,17 +13,17 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     dirs: {
-      output: 'dist'
+      output: 'app/dist'
     },
 
     connect: {
-        server: {
-          options: {
-            port: 9001,
-            livereload: true,
-            base: 'app'
-          }
+      server: {
+        options: {
+          port: 9001,
+          livereload: true,
+          base: 'app'
         }
+      }
     },
 
     watch: {
@@ -41,6 +39,7 @@ module.exports = function (grunt) {
       }
     },
 
+    // node-sass task for Scss partials
     sass: {
       dev: {
         options: {
@@ -55,20 +54,34 @@ module.exports = function (grunt) {
           outputStyle: "compressed"
         },
         files: {
-          'app/<%= dirs.output %>/css/main.css': 'app/scss/main.scss'
+          '<%= dirs.output %>/css/main.css': 'app/scss/main.scss'
         }
       }
     },
 
     // Minify html
-    htmlmin: {                                     // Task
-      dist: {                                      // Target
-        options: {                                 // Target options
+    htmlmin: {
+      dist: {
+        options: {
           removeComments: true,
           collapseWhitespace: true
         },
-        files: {                                   // Dictionary of files
-          'app/<%= dirs.output %>/index.html': 'app/index.html'     // 'destination': 'source'
+        files: {
+          // Dictionary of files 'destination': 'source'
+          '<%= dirs.output %>/index.html': 'app/index.html'
+        }
+      }
+    },
+
+    // minify scripts and add a banner
+    uglify: {
+      options: {
+        banner: '<%= tag.banner %>',
+        screwIE8: true
+      },
+      dist: {
+        files: {
+          '<%= dirs.output %>/js/main.js': ['app/js/main.js']
         }
       }
     },
@@ -93,6 +106,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'sass:dist',
+    'uglify:dist',
     'htmlmin'
     ]);
 };
