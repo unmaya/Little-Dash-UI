@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+// Girder grid modules
+@import "../../bower_components/girder/scss/girder";
+
+// Girder Variables and Settings
+$em-base: 12px;
+$gutters: 2em;
+$include-extras: false;
+$xsmall-breakpoint  : 30em;
+$container-max-width: 1000px;
+
+// Styling Variables
+$body-bg             : #ecebe5;
+$base-font-color     : #404040;
+$secondary-color		 : #777777;
+$linkColor	         : #1E83C7;
+$linkHoverColor      : #e05538;
+$highlightColor      : #fffac0;
+
+// Font Families and base sizes
+$headings-font-family : 'Lato', 'Source Sans Pro', Helvetica, sans-serif;
+$base-font-family     : 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$h1-font-size: 2.8   * $em-base;
+$h2-font-size: 1.8   * $em-base;
+$h3-font-size: 1.17  * $em-base;
+$h4-font-size: 1     * $em-base;
+$h5-font-size: 0.83  * $em-base;
+$h6-font-size: 0.67  * $em-base;
+
+// Base Styles
+@import "normalize";
+@import "base";
+
+// Imported Styles
+@import "panels";
+@import "timeline";
+@import "buttons";
+
+// Dashboard styling
+@import "dashboard";
+
