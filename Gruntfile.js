@@ -1,13 +1,12 @@
+/* jshint node: true */
+
 /**
  * General Grunt setup
  */
-'use strict';
 
 module.exports = function (grunt) {
-  // Load grunt tasks automatically
-  require('load-grunt-tasks')(grunt);
-  // Time how long tasks take (to optimize build times)
-  require('time-grunt')(grunt);
+
+  'use strict';
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -30,6 +29,13 @@ module.exports = function (grunt) {
       scss: {
         files: 'app/scss/**/*.scss',
         tasks: ['sass:dev']
+      },
+      js: {
+        files: 'app/js/**/*.js',
+        tasks: ['jshint'],
+        options: {
+          livereload: true
+        }
       },
       reload: {
         files: ['app/css/**/*.css', 'app/js/*.js', 'app/**/*.html'],
@@ -55,6 +61,28 @@ module.exports = function (grunt) {
         },
         files: {
           '<%= dirs.output %>/css/main.css': 'app/scss/main.scss'
+        }
+      }
+    },
+
+    // Lint the JS source
+    jshint: {
+      files: ['app/js/**/*.js', '!app/dist/**'],
+      options: {
+        curly:   true,
+        eqeqeq:  true,
+        latedef: true,
+        undef:   true,
+        eqnull:  true,
+        browser: true,
+
+        globals: {
+          // Environments
+          console:    true,
+
+          // General Purpose Libraries
+          $:          true,
+          jQuery:     true
         }
       }
     },
@@ -98,14 +126,21 @@ module.exports = function (grunt) {
 
   });
 
+  // Load grunt tasks from package.json
+  require('load-grunt-tasks')(grunt);
+  // Time how long tasks take (to optimize build times)
+  require('time-grunt')(grunt);
+
   grunt.registerTask('default', [
     'sass:dev',
+    'jshint',
     'connect',
     'watch'
     ]);
 
   grunt.registerTask('build', [
     'sass:dist',
+    'jshint',
     'uglify:dist',
     'htmlmin'
     ]);
