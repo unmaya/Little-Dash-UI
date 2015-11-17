@@ -222,10 +222,28 @@ footer {
 
 .drawer {
   display: none;
+  position: relative;
 
   &.is-active {display: block;}
 
-  .spendings {
-    padding: 20px;
+  .drawer-close {
+    background-color: transparent;
+    border: none;
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    height: 36px;
+    width: 36px;
+
+    padding: 1px 3px;
+    text-align: center;
+    font-size: 1.6em;
+    color: white;
+  }
+
+  .drawer-title {
+    margin: 0;
   }
 }

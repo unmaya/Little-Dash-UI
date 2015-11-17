@@ -52,7 +52,7 @@
   border-top-color: #dfe2e4;
 }
 .panel-default > .panel-heading {
-  color: #333333;
+  color: #333;
   background-color: whitesmoke;
   border-color: #dfe2e4;
 }
@@ -60,5 +60,21 @@
   border-top-color: #bdc3c7;
 }
 .panel-default > .panel-heading > .dropdown .caret {
-  border-color: #333333 transparent;
+  border-color: #333 transparent;
+}
+.panel-success {
+  border-bottom-color: #bdc3c7;
+  border-left-color: #dfe2e4;
+  border-right-color: #dfe2e4;
+  border-top-color: #dfe2e4; }
+.panel-success > .panel-heading {
+  color: white;
+  background-color: #2ecc71;
+  border-color: #bdc3c7;
+}
+.panel-success > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #bdc3c7;
+}
+.panel-success > .panel-heading > .dropdown .caret {
+  border-color: white transparent;
 }
