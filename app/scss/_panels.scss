@@ -5,6 +5,10 @@
   border-bottom: 5px solid transparent;
   border-radius: 0 0 5px 5px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  border-bottom-color: #bdc3c7;
+  border-left-color: #dfe2e4;
+  border-right-color: #dfe2e4;
+  border-top-color: #dfe2e4;
 }
 
 .panel-body {
@@ -45,21 +49,15 @@
   border-bottom-left-radius: 4px;
 }
 
-.panel-default {
-  border-bottom-color: #bdc3c7;
-  border-left-color: #dfe2e4;
-  border-right-color: #dfe2e4;
-  border-top-color: #dfe2e4;
-}
-.panel-default > .panel-heading {
+.panel > .panel-heading {
   color: #333;
   background-color: whitesmoke;
   border-color: #dfe2e4;
 }
-.panel-default > .panel-heading + .panel-collapse .panel-body {
+.panel > .panel-heading + .panel-collapse .panel-body {
   border-top-color: #bdc3c7;
 }
-.panel-default > .panel-heading > .dropdown .caret {
+.panel > .panel-heading > .dropdown .caret {
   border-color: #333 transparent;
 }
 .panel-success {
