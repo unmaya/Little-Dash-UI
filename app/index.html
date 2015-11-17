@@ -1,0 +1,303 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>UI / UX Experimental App</title>
+        <meta name="description" content="A little app UI built using GruntJS">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- TODO: Add Favicon Image -->
+        <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+
+        <!-- External Icons and Fonts -->
+        <script src="https://use.fonticons.com/7e1eb662.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <header id="header" class="row">
+      <h1><i class="icon icon-cube"></i> My Money App</h1>
+
+      <div class="header-notify">
+        <a class="notifications" href="#"><i class="icon icon-bell"></i> <span>3</span></a>
+        <a class="questions" href="#"><i class="icon icon-question"></i></a>
+      </div>
+
+      <ul class="notifications-view slideInUp">
+        <li><a href="#"><i class="icon icon-star"></i> Goal progress update: <strong>New Bike</strong></a></li>
+        <li><a href="#"><i class="icon icon-plus"></i> $10 has been added to your debit account.</a></li>
+        <li><a href="#"><i class="icon icon-plus"></i> $15 has been added to your debit account.</a></li>
+      </ul>
+
+      <div class="header-nav">
+        <h2>Hello, Alexander!</h2>
+        <p class="header-summary">There have been <a href="#"><strong>3 transactions</strong></a> since you last visited.</p>
+
+    		<nav>
+          <button type="button" class="btn add-money" title="Deposit money">Deposit Money</button>
+          <button type="button" class="btn transfer-money" title="Transfer money">Transfer Money</button>
+          <button type="button" class="btn view-goals" title="View Goals"><i class="icon icon-star"></i></button>
+        </nav>
+			</div>
+		</header><!-- /header -->
+
+
+    <main class="container">
+
+      <section class="drawer">
+        <div class="deposit-start-view panel panel-success">
+          <div class="panel-heading">
+            <h2 class="drawer-title"> Deposit Was Successful!</h2>
+          </div>
+          <div class="panel-body">
+            <h2>$10 has been added to your debit account.</h2>
+          </div>
+        </div>
+        <button type="button" class="drawer-close icon icon-times-circle"></button>
+      </section>
+
+			<section class="main-stats row">
+				<div class="panel-main-stats spendings">
+					<div class="panel panel">
+            <a class="main-stats-link" href="#" title="Debit Account Activity Breakdown">
+						<div class="panel-body">
+							<div class="box-stats">
+								<p>$30</p>
+								<span class="box-stats-caption">Debit Account</span>
+							</div>
+							<div class="goal-img">
+								<i class="icon icon-credit-card"></i>
+								Spending
+							</div>
+						</div>
+            </a>
+					</div>
+				</div>
+
+				<div class="panel-main-stats savings">
+					<div class="panel panel">
+            <a class="main-stats-link" href="#" title="Debit Account Activity Breakdown">
+						<div class="panel-body">
+							<div class="box-stats">
+								<p>$60</p>
+								<span class="box-stats-caption">Savings Account</span>
+							</div>
+							<div class="progress is-hidden">
+							  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+							  </div>
+							</div>
+							<div class="goal-img">
+								<i class="icon icon-pie-chart"></i>
+								Saving
+							</div>
+						</div>
+            </a>
+					</div>
+				</div>
+
+				<div class="panel-main-stats goals">
+					<div class="panel panel">
+            <a class="main-stats-link" href="#" title="Debit Account Activity Breakdown">
+						<div class="panel-body">
+							<div class="box-stats">
+								<p>$90</p>
+								<span class="box-stats-caption">Goal Progress</span>
+							</div>
+							<div class="progress">
+								 <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+							</div>
+
+							<div class="goal-img">
+								<i class="icon icon-bicycle"></i>
+								Cost: $120
+							</div>
+						</div>
+            </a>
+					</div>
+				</div>
+			</section>
+
+      <div class="panel panel account-activity">
+        <div class="panel-heading">
+            <h3><i class="icon icon-user"></i> Activity</h3>
+            <div class="activity-filters">
+              <div class="search"><i class="icon icon-search"></i></div>
+                <div class="btn-group">
+                <button type="button" class="btn btn-filter">
+                  <span class="caret"></span> Filter
+                </button>
+                <!--
+                <ul class="dropdown-filter-options" role="menu">
+                  <li><a href="#">Money coming in</a>
+                  </li>
+                  <li><a href="#">Money going out</a>
+                  </li>
+                  <li><a href="#">Goals progress</a>
+                  </li>
+                </ul>
+                -->
+              </div>
+          </div>
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+          <ul class="timeline">
+
+            <li>
+              <div class="timeline-badge goals">
+                <i class="icon icon-star"></i>
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4 class="timeline-title">Goal Progress</h4>
+                </div>
+                <div class="timeline-body">
+                  <p>You are close to achieving a savings goal: <a href="#">New Bike</a></p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="timeline-badge savings">
+                <i class="icon icon-plus"></i>
+                <strong class="timeline-value">+$10</strong>
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4 class="timeline-title">Savings Account</h4>
+                  <p><small class="text-muted">6 hours ago via My Money App</small>
+                    </p>
+                </div>
+                <div class="timeline-body">
+                  <p>You transfered money to your savings account.</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+            <div class="timeline-badge deposits">
+                <i class="icon icon-plus"></i>
+                <strong class="timeline-value">+$15</strong>
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4 class="timeline-title">Weekly Allowance</h4>
+                  <p><small class="text-muted">2 days ago via Paypal</small>
+                    </p>
+                </div>
+                <div class="timeline-body">
+                  <p>You received money to your Debit account.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="timeline-inverted">
+              <div class="timeline-badge warning">
+                <i class="icon icon-exclamation-triangle"></i>
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4 class="timeline-title">Your Debit account is low on money. Always check that you have sufficient funds available. <a href="#"> <i class="icon icon-bell"></i> Get notified</a></h4>
+                </div>
+              </div>
+            </li>
+
+            <li class="timeline-inverted">
+              <div class="timeline-badge spending">
+                <i class="icon icon-minus"></i>
+                <strong class="timeline-value"> -$25</strong>
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4 class="timeline-title">Spent money: Amazon Store Card</h4>
+                  <p><small class="text-muted">5 days ago via Debit card</small></p>
+                </div>
+                <div class="timeline-body">
+                  <p>You spent money from your Debit account.</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="timeline-badge deposits">
+                <i class="icon icon-plus"></i>
+                <strong class="timeline-value"> +$5</strong>
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4 class="timeline-title">Debit Account</h4>
+                  <p><small class="text-muted">6 days ago via My Money App</small>
+                </div>
+                <div class="timeline-body">
+                  <p>Earned a bonus for completing the lesson: <a href="">Banking Best Practices</a>.</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="timeline-badge goals">
+                <i class="icon icon-star"></i>
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4 class="timeline-title">How to earn extra money</h4>
+                </div>
+                <div class="timeline-body">
+                  <p>Learn about <a href="#">Banking Best Practices</a> in a short lesson to get a bonus added to your account.</p>
+                </div>
+              </div>
+            </li>
+
+              <li class="timeline-inverted">
+                <div class="timeline-badge spending">
+                  <i class="icon icon-minus"></i>
+                  <strong class="timeline-value"> -$10</strong>
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4 class="timeline-title">Spent money: Apple Store Card</h4>
+                    <p><small class="text-muted">10 days ago via Debit card</small>
+                  </p>
+                  </div>
+                  <div class="timeline-body">
+                    <p>You've spent money from your Debit account.</p>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+
+            <div class="timeline-load-more"><a href="#">Load more...</a></div>
+          </div>
+          <!-- /.panel-body -->
+        </div>
+
+    </main>
+    <!-- /.container -->
+
+
+    <footer>
+      <p class="text-muted">A UI &amp; UX experiment by <a href="http://fredmaya.com">Fred Maya</a> (<a href="https://github.com/unmaya/Little-Dash-UI">view source</a>).</p>
+    </footer>
+
+
+    <!-- main app JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics -->
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='https://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-272608-7','auto');ga('send','pageview');
+    </script>
+
+    </body>
+</html>

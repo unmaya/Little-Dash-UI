@@ -2,8 +2,3 @@
 node_modules/*
 DevRunner.sublime-project
 DevRunner.sublime-workspace
-app/css
-app/js
-
-app/dist/index.html
-app/index.html
